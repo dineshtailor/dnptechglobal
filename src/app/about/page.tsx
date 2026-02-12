@@ -11,24 +11,6 @@ import {
   Shield,
 } from "lucide-react";
 
-const team = [
-  {
-    name: "Ms. Padma Tailor",
-    role: "Director",
-    description: "Operations and Business Development, Client relationship management, Strategic planning",
-  },
-  {
-    name: "Mr. Manoj Kumar",
-    role: "Director",
-    description: "Technical delivery and project management, Team leadership, Quality assurance",
-  },
-  {
-    name: "Mr. Dinesh Kumar Tailor",
-    role: "Technical Advisor",
-    description: "15+ years in DevOps, Cloud Infrastructure, and Telecom Solutions. Expert in AAA systems, RADIUS, 3G/4G/5G networks, and carrier-grade infrastructure.",
-  },
-];
-
 const certifications = [
   "AWS Certified Solutions Architect",
   "AWS Certified DevOps Engineer",
@@ -181,35 +163,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Leadership Team */}
-      <section className="py-24 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Meet Our Team</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-4">Leadership Team</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Experienced leaders driving innovation and excellence in IT services
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <div
-                key={member.name}
-                className="group bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-cyan-200 hover:-translate-y-2 text-center"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="gradient-bg w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl">
-                  <Users className="h-10 w-10 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{member.name}</h3>
-                <p className="text-cyan-600 font-semibold text-lg mt-2 mb-4">{member.role}</p>
-                <p className="text-gray-600 leading-relaxed">{member.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Certifications */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -292,7 +245,7 @@ export default function About() {
               <ul className="space-y-4">
                 <li className="flex items-start group hover:translate-x-2 transition-transform duration-300">
                   <CheckCircle className="h-6 w-6 text-cyan-500 mr-3 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="text-gray-700 leading-relaxed">Deep telecom domain expertise - AAA, RADIUS, 3G/4G/5G, billing systems</span>
+                  <span className="text-gray-700 leading-relaxed">Deep telecom domain expertise - High performance AAA, 6G deployment</span>
                 </li>
                 <li className="flex items-start group hover:translate-x-2 transition-transform duration-300">
                   <CheckCircle className="h-6 w-6 text-cyan-500 mr-3 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
