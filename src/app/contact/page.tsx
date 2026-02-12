@@ -52,103 +52,119 @@ export default function Contact() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="gradient-bg text-white py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+      <section className="relative gradient-bg text-white py-20 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-10 right-10 w-80 h-80 bg-cyan-300 rounded-full blur-3xl animate-float-delayed"></div>
+        </div>
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <span className="inline-block mb-4 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-sm font-medium">
+            Get in Touch
+          </span>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in-up">Contact Us</h1>
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed animate-fade-in-up-delay-1">
             Let&apos;s discuss how we can help transform your business with our telecom, cloud, and DevOps expertise
           </p>
         </div>
+
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+            <path d="M0 80L60 70C120 60 240 40 360 35C480 30 600 40 720 45C840 50 960 50 1080 45C1200 40 1320 30 1380 25L1440 20V80H1380C1320 80 1200 80 1080 80C960 80 840 80 720 80C600 80 480 80 360 80C240 80 120 80 60 80H0Z" fill="white"/>
+          </svg>
+        </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Contact Information */}
             <div className="lg:col-span-1">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+              <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Contact Details</span>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 mt-2">Get in Touch</h2>
               <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="gradient-bg p-3 rounded-lg mr-4">
+                <div className="group flex items-start bg-gradient-to-br from-blue-50 to-white p-5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-100 hover:-translate-y-1">
+                  <div className="gradient-bg p-3 rounded-xl mr-4 group-hover:scale-110 transition-transform shadow-lg">
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900">Office Location</h3>
-                    <p className="text-gray-600">Navi Mumbai, Maharashtra, India</p>
+                    <h3 className="font-bold text-gray-900 text-lg">Office Location</h3>
+                    <p className="text-gray-600 mt-1">Navi Mumbai, Maharashtra, India</p>
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="gradient-bg p-3 rounded-lg mr-4">
+                <div className="group flex items-start bg-gradient-to-br from-cyan-50 to-white p-5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-cyan-100 hover:-translate-y-1">
+                  <div className="gradient-bg p-3 rounded-xl mr-4 group-hover:scale-110 transition-transform shadow-lg">
                     <Mail className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900">Email</h3>
-                    <p className="text-gray-600">contact@dnptechnologies.com</p>
+                    <h3 className="font-bold text-gray-900 text-lg">Email</h3>
+                    <p className="text-gray-600 mt-1">contact@dnptechnologies.com</p>
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="gradient-bg p-3 rounded-lg mr-4">
+                <div className="group flex items-start bg-gradient-to-br from-blue-50 to-white p-5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-100 hover:-translate-y-1">
+                  <div className="gradient-bg p-3 rounded-xl mr-4 group-hover:scale-110 transition-transform shadow-lg">
                     <Phone className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900">Phone</h3>
-                    <p className="text-gray-600">+91 XXXXX XXXXX</p>
+                    <h3 className="font-bold text-gray-900 text-lg">Phone</h3>
+                    <p className="text-gray-600 mt-1">+91 XXXXX XXXXX</p>
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="gradient-bg p-3 rounded-lg mr-4">
+                <div className="group flex items-start bg-gradient-to-br from-cyan-50 to-white p-5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-cyan-100 hover:-translate-y-1">
+                  <div className="gradient-bg p-3 rounded-xl mr-4 group-hover:scale-110 transition-transform shadow-lg">
                     <Clock className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900">Business Hours</h3>
-                    <p className="text-gray-600">Mon - Fri: 9:00 AM - 6:00 PM IST</p>
+                    <h3 className="font-bold text-gray-900 text-lg">Business Hours</h3>
+                    <p className="text-gray-600 mt-1">Mon - Fri: 9:00 AM - 6:00 PM IST</p>
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="gradient-bg p-3 rounded-lg mr-4">
+                <div className="group flex items-start bg-gradient-to-br from-blue-50 to-white p-5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-100 hover:-translate-y-1">
+                  <div className="gradient-bg p-3 rounded-xl mr-4 group-hover:scale-110 transition-transform shadow-lg">
                     <Globe className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900">Service Areas</h3>
-                    <p className="text-gray-600">India, USA, Middle East, Southeast Asia</p>
+                    <h3 className="font-bold text-gray-900 text-lg">Service Areas</h3>
+                    <p className="text-gray-600 mt-1">India, USA, Middle East, Southeast Asia</p>
                   </div>
                 </div>
               </div>
 
               {/* Quick Info */}
-              <div className="mt-8 bg-gray-50 p-6 rounded-xl">
-                <h3 className="font-semibold text-gray-900 mb-4">Engagement Models</h3>
-                <ul className="space-y-2 text-gray-600 text-sm">
-                  <li>• Fixed Price Projects</li>
-                  <li>• Time & Material (T&M)</li>
-                  <li>• Monthly Retainer</li>
-                  <li>• Dedicated Team</li>
+              <div className="mt-8 bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl shadow-xl border border-gray-100">
+                <h3 className="font-bold text-gray-900 text-xl mb-6">Engagement Models</h3>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-center"><span className="text-cyan-500 mr-3 text-xl">•</span> Fixed Price Projects</li>
+                  <li className="flex items-center"><span className="text-cyan-500 mr-3 text-xl">•</span> Time & Material (T&M)</li>
+                  <li className="flex items-center"><span className="text-cyan-500 mr-3 text-xl">•</span> Monthly Retainer</li>
+                  <li className="flex items-center"><span className="text-cyan-500 mr-3 text-xl">•</span> Dedicated Team</li>
                 </ul>
               </div>
             </div>
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
+              <div className="bg-gradient-to-br from-white to-gray-50 p-10 rounded-3xl shadow-2xl border border-gray-100">
+                <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Send a Message</span>
+                <h2 className="text-3xl font-bold text-gray-900 mb-8 mt-2">Let's Start a Conversation</h2>
 
                 {error && (
-                  <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg">
+                  <div className="mb-6 p-5 bg-red-50 border-2 border-red-200 text-red-700 rounded-2xl font-medium animate-fade-in-up">
                     {error}
                   </div>
                 )}
 
                 {submitted ? (
-                  <div className="text-center py-12">
-                    <div className="gradient-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Send className="h-8 w-8 text-white" />
+                  <div className="text-center py-16 animate-fade-in-up">
+                    <div className="gradient-bg w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl animate-float">
+                      <Send className="h-10 w-10 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
-                    <p className="text-gray-600">
+                    <h3 className="text-3xl font-bold text-gray-900 mb-4">Thank You!</h3>
+                    <p className="text-gray-600 text-lg">
                       We&apos;ve received your message and will get back to you within 24 hours.
                     </p>
                   </div>
@@ -156,7 +172,7 @@ export default function Contact() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="name" className="block text-sm font-bold text-gray-900 mb-2">
                           Full Name *
                         </label>
                         <input
@@ -166,12 +182,12 @@ export default function Contact() {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all duration-300 bg-white shadow-sm hover:border-gray-300"
                           placeholder="Your name"
                         />
                       </div>
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="email" className="block text-sm font-bold text-gray-900 mb-2">
                           Email Address *
                         </label>
                         <input
@@ -181,7 +197,7 @@ export default function Contact() {
                           required
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all duration-300 bg-white shadow-sm hover:border-gray-300"
                           placeholder="your@email.com"
                         />
                       </div>
@@ -189,7 +205,7 @@ export default function Contact() {
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="company" className="block text-sm font-bold text-gray-900 mb-2">
                           Company Name
                         </label>
                         <input
@@ -198,12 +214,12 @@ export default function Contact() {
                           name="company"
                           value={formData.company}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all duration-300 bg-white shadow-sm hover:border-gray-300"
                           placeholder="Your company"
                         />
                       </div>
                       <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="phone" className="block text-sm font-bold text-gray-900 mb-2">
                           Phone Number
                         </label>
                         <input
@@ -212,14 +228,14 @@ export default function Contact() {
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all duration-300 bg-white shadow-sm hover:border-gray-300"
                           placeholder="+91 XXXXX XXXXX"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="service" className="block text-sm font-bold text-gray-900 mb-2">
                         Service Interested In
                       </label>
                       <select
@@ -227,7 +243,7 @@ export default function Contact() {
                         name="service"
                         value={formData.service}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all duration-300 bg-white shadow-sm hover:border-gray-300"
                       >
                         <option value="">Select a service</option>
                         <option value="telecom">Telecom Solutions</option>
@@ -241,7 +257,7 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="message" className="block text-sm font-bold text-gray-900 mb-2">
                         Message *
                       </label>
                       <textarea
@@ -251,7 +267,7 @@ export default function Contact() {
                         rows={5}
                         value={formData.message}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        className="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all duration-300 bg-white shadow-sm hover:border-gray-300 resize-none"
                         placeholder="Tell us about your project or requirements..."
                       />
                     </div>
@@ -259,14 +275,14 @@ export default function Contact() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full gradient-bg text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center"
+                      className="group w-full gradient-bg text-white py-5 px-8 rounded-xl font-bold hover:shadow-2xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-lg shadow-xl hover:scale-105"
                     >
                       {isSubmitting ? (
                         "Sending..."
                       ) : (
                         <>
                           Send Message
-                          <Send className="ml-2 h-5 w-5" />
+                          <Send className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />
                         </>
                       )}
                     </button>

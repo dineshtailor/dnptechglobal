@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, Cloud, Server, Code, Phone } from "lucide-react";
 
@@ -19,10 +20,15 @@ export default function Header() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 justify-between items-center">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="gradient-bg p-2 rounded-lg">
-                <Server className="h-6 w-6 text-white" />
-              </div>
+            <Link href="/" className="flex items-center space-x-3">
+              <Image
+                src="/logo.jpg"
+                alt="DnP Technologies Logo"
+                width={50}
+                height={50}
+                className="rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+                priority
+              />
               <div>
                 <span className="text-xl font-bold text-gradient">DnP Technologies</span>
                 <p className="text-xs text-gray-500">Empowering Digital Transformation</p>

@@ -173,36 +173,55 @@ export default function Services() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="gradient-bg text-white py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+      <section className="relative gradient-bg text-white py-20 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-10 right-10 w-80 h-80 bg-cyan-300 rounded-full blur-3xl animate-float-delayed"></div>
+        </div>
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <span className="inline-block mb-4 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-sm font-medium">
+            Comprehensive Solutions
+          </span>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in-up">Our Services</h1>
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed animate-fade-in-up-delay-1">
             Comprehensive IT solutions spanning Telecom, Cloud, DevOps, and Enterprise Software Development
           </p>
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+            <path d="M0 80L60 70C120 60 240 40 360 35C480 30 600 40 720 45C840 50 960 50 1080 45C1200 40 1320 30 1380 25L1440 20V80H1380C1320 80 1200 80 1080 80C960 80 840 80 720 80C600 80 480 80 360 80C240 80 120 80 60 80H0Z" fill="white"/>
+          </svg>
         </div>
       </section>
 
       {/* Telecom Solutions */}
-      <section className="py-16">
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="gradient-bg p-3 rounded-lg">
-              <Network className="h-8 w-8 text-white" />
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-12">
+            <div className="gradient-bg p-4 rounded-2xl shadow-xl">
+              <Network className="h-10 w-10 text-white" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-gray-900">Telecom Solution Development</h2>
-              <p className="text-gray-600">Carrier-grade telecommunications infrastructure and solutions</p>
+              <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Telecommunications</span>
+              <h2 className="text-4xl font-bold text-gray-900 mt-1">Telecom Solution Development</h2>
+              <p className="text-gray-600 text-lg mt-2">Carrier-grade telecommunications infrastructure and solutions</p>
             </div>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {telecomServices.map((service) => (
-              <div key={service.title} className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
-                <ul className="space-y-2">
+            {telecomServices.map((service, index) => (
+              <div
+                key={service.title}
+                className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-200 hover:-translate-y-2"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <h3 className="text-xl font-bold text-gray-900 mb-5 group-hover:text-blue-600 transition-colors">{service.title}</h3>
+                <ul className="space-y-3">
                   {service.items.map((item) => (
                     <li key={item} className="flex items-start text-gray-600 text-sm">
-                      <Radio className="h-4 w-4 text-cyan-500 mr-2 mt-0.5 flex-shrink-0" />
-                      {item}
+                      <Radio className="h-4 w-4 text-cyan-500 mr-3 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                      <span className="leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -213,26 +232,31 @@ export default function Services() {
       </section>
 
       {/* Solution Integration */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="gradient-bg p-3 rounded-lg">
-              <Settings className="h-8 w-8 text-white" />
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-12">
+            <div className="gradient-bg p-4 rounded-2xl shadow-xl">
+              <Settings className="h-10 w-10 text-white" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-gray-900">Solution Integration Services</h2>
-              <p className="text-gray-600">Enterprise and telecom system integration expertise</p>
+              <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Integration</span>
+              <h2 className="text-4xl font-bold text-gray-900 mt-1">Solution Integration Services</h2>
+              <p className="text-gray-600 text-lg mt-2">Enterprise and telecom system integration expertise</p>
             </div>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {integrationServices.map((service) => (
-              <div key={service.title} className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
-                <ul className="space-y-2">
+            {integrationServices.map((service, index) => (
+              <div
+                key={service.title}
+                className="group bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-cyan-200 hover:-translate-y-2"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <h3 className="text-xl font-bold text-gray-900 mb-5 group-hover:text-blue-600 transition-colors">{service.title}</h3>
+                <ul className="space-y-3">
                   {service.items.map((item) => (
                     <li key={item} className="flex items-start text-gray-600 text-sm">
-                      <Layers className="h-4 w-4 text-cyan-500 mr-2 mt-0.5 flex-shrink-0" />
-                      {item}
+                      <Layers className="h-4 w-4 text-cyan-500 mr-3 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                      <span className="leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -243,26 +267,31 @@ export default function Services() {
       </section>
 
       {/* Cloud Services */}
-      <section className="py-16">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="gradient-bg p-3 rounded-lg">
-              <Cloud className="h-8 w-8 text-white" />
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-12">
+            <div className="gradient-bg p-4 rounded-2xl shadow-xl">
+              <Cloud className="h-10 w-10 text-white" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-gray-900">Cloud Services</h2>
-              <p className="text-gray-600">Multi-cloud solutions across AWS, Azure, and GCP</p>
+              <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Cloud Infrastructure</span>
+              <h2 className="text-4xl font-bold text-gray-900 mt-1">Cloud Services</h2>
+              <p className="text-gray-600 text-lg mt-2">Multi-cloud solutions across AWS, Azure, and GCP</p>
             </div>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            {cloudServices.map((service) => (
-              <div key={service.title} className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
-                <ul className="space-y-2">
+            {cloudServices.map((service, index) => (
+              <div
+                key={service.title}
+                className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-200 hover:-translate-y-2"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <h3 className="text-2xl font-bold text-gray-900 mb-5 group-hover:text-blue-600 transition-colors">{service.title}</h3>
+                <ul className="space-y-3">
                   {service.items.map((item) => (
-                    <li key={item} className="flex items-start text-gray-600 text-sm">
-                      <Globe className="h-4 w-4 text-cyan-500 mr-2 mt-0.5 flex-shrink-0" />
-                      {item}
+                    <li key={item} className="flex items-start text-gray-600">
+                      <Globe className="h-5 w-5 text-cyan-500 mr-3 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                      <span className="leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -273,26 +302,31 @@ export default function Services() {
       </section>
 
       {/* DevOps Services */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="gradient-bg p-3 rounded-lg">
-              <Code className="h-8 w-8 text-white" />
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-12">
+            <div className="gradient-bg p-4 rounded-2xl shadow-xl">
+              <Code className="h-10 w-10 text-white" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-gray-900">DevOps Services</h2>
-              <p className="text-gray-600">End-to-end DevOps implementation and automation</p>
+              <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">DevOps & Automation</span>
+              <h2 className="text-4xl font-bold text-gray-900 mt-1">DevOps Services</h2>
+              <p className="text-gray-600 text-lg mt-2">End-to-end DevOps implementation and automation</p>
             </div>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {devopsServices.map((service) => (
-              <div key={service.title} className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
-                <ul className="space-y-2">
+            {devopsServices.map((service, index) => (
+              <div
+                key={service.title}
+                className="group bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100 hover:border-cyan-200 hover:-translate-y-2"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <h3 className="text-xl font-bold text-gray-900 mb-5 group-hover:text-blue-600 transition-colors">{service.title}</h3>
+                <ul className="space-y-3">
                   {service.items.map((item) => (
-                    <li key={item} className="flex items-start text-gray-600 text-sm">
-                      <Container className="h-4 w-4 text-cyan-500 mr-2 mt-0.5 flex-shrink-0" />
-                      {item}
+                    <li key={item} className="flex items-start text-gray-700 text-sm">
+                      <Container className="h-4 w-4 text-cyan-600 mr-3 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                      <span className="leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -303,26 +337,31 @@ export default function Services() {
       </section>
 
       {/* Software Development */}
-      <section className="py-16">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="gradient-bg p-3 rounded-lg">
-              <Server className="h-8 w-8 text-white" />
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-12">
+            <div className="gradient-bg p-4 rounded-2xl shadow-xl">
+              <Server className="h-10 w-10 text-white" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-gray-900">Software Development</h2>
-              <p className="text-gray-600">Custom application development and enterprise solutions</p>
+              <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Development</span>
+              <h2 className="text-4xl font-bold text-gray-900 mt-1">Software Development</h2>
+              <p className="text-gray-600 text-lg mt-2">Custom application development and enterprise solutions</p>
             </div>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            {softwareServices.map((service) => (
-              <div key={service.title} className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
-                <ul className="space-y-2">
+            {softwareServices.map((service, index) => (
+              <div
+                key={service.title}
+                className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-200 hover:-translate-y-2"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <h3 className="text-2xl font-bold text-gray-900 mb-5 group-hover:text-blue-600 transition-colors">{service.title}</h3>
+                <ul className="space-y-3">
                   {service.items.map((item) => (
-                    <li key={item} className="flex items-start text-gray-600 text-sm">
-                      <FileCode className="h-4 w-4 text-cyan-500 mr-2 mt-0.5 flex-shrink-0" />
-                      {item}
+                    <li key={item} className="flex items-start text-gray-600">
+                      <FileCode className="h-5 w-5 text-cyan-500 mr-3 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                      <span className="leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -333,36 +372,37 @@ export default function Services() {
       </section>
 
       {/* IT Consulting */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="gradient-bg p-3 rounded-lg">
-              <Shield className="h-8 w-8 text-white" />
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-12">
+            <div className="gradient-bg p-4 rounded-2xl shadow-xl">
+              <Shield className="h-10 w-10 text-white" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-gray-900">IT Consulting</h2>
-              <p className="text-gray-600">Strategic technology consulting and digital transformation</p>
+              <span className="text-cyan-600 font-semibold text-sm uppercase tracking-wider">Advisory</span>
+              <h2 className="text-4xl font-bold text-gray-900 mt-1">IT Consulting</h2>
+              <p className="text-gray-600 text-lg mt-2">Strategic technology consulting and digital transformation</p>
             </div>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
-              <Lightbulb className="h-10 w-10 text-blue-600 mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Technology Consulting</h3>
-              <p className="text-gray-600 text-sm">
+            <div className="group bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100 hover:border-cyan-200 hover:-translate-y-2">
+              <Lightbulb className="h-12 w-12 text-blue-600 mb-5 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">Technology Consulting</h3>
+              <p className="text-gray-600 leading-relaxed">
                 IT strategy development, technology stack selection, architecture review, and technical due diligence.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
-              <TrendingUp className="h-10 w-10 text-cyan-500 mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Digital Transformation</h3>
-              <p className="text-gray-600 text-sm">
+            <div className="group bg-gradient-to-br from-cyan-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-cyan-100 hover:border-blue-200 hover:-translate-y-2">
+              <TrendingUp className="h-12 w-12 text-cyan-600 mb-5 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-cyan-600 transition-colors">Digital Transformation</h3>
+              <p className="text-gray-600 leading-relaxed">
                 Digital maturity assessment, cloud adoption strategy, DevOps transformation, and agile consulting.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
-              <Building className="h-10 w-10 text-blue-600 mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Infrastructure Consulting</h3>
-              <p className="text-gray-600 text-sm">
+            <div className="group bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100 hover:border-cyan-200 hover:-translate-y-2">
+              <Building className="h-12 w-12 text-blue-600 mb-5 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">Infrastructure Consulting</h3>
+              <p className="text-gray-600 leading-relaxed">
                 Data center optimization, network architecture, security compliance, and capacity planning.
               </p>
             </div>
